@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="Source\DuckRendering.cpp" />
     <ClCompile Include="Source\glad.c" />
+    <ClCompile Include="Source\GraphicsSystem.cpp" />
     <ClCompile Include="Source\Main.cpp" />
     <ClCompile Include="Source\Stub.cpp" />
     <ClCompile Include="Source\System.cpp" />
@@ -148,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\DuckRendering.h" />
+    <ClInclude Include="Source\GraphicsSystem.h" />
     <ClInclude Include="Source\Stub.h" />
     <ClInclude Include="Source\System.h" />
     <ClInclude Include="Source\WindowSystem.h" />

@@ -7,6 +7,7 @@
 //*****************************************************************************
 
 #include "WindowSystem.h"
+#include "GraphicsSystem.h"
 #include "DuckRendering.h"
 
 // Here we will allocate memory to all the necessary Systems and add them to the System List
@@ -14,7 +15,9 @@
 DuckRendering::DuckRendering() : systemList_{ nullptr }, shouldShutdown_(false) {
 	// Create a window system and add it to the render engine
 	System* windowSys = new WindowSystem();
+	System* graphicSys = new GraphicsSystem();
 	AddSystem(windowSys);
+	AddSystem(graphicSys);
 }
 
 // Here we will create all the necessary Systems and add them to the System List

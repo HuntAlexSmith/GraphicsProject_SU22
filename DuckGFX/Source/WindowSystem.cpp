@@ -18,6 +18,15 @@ void WindowSystem::Initialize() {
 	if (SDL_Init(SDL_INIT_EVERYTHING) != 0)
 		return;
 
+	// Set window attributes for OpenGL 4.5
+	SDL_GL_SetAttribute(SDL_GL_ACCELERATED_VISUAL, 1);
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 5);
+
+	// We also want a depth buffer and double buffering
+	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
+	SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
+
 	// For simplicity, set all flags desired here
 	windowFlags_ = SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL;
 
@@ -31,19 +40,26 @@ void WindowSystem::Update(float dt) {
 	SDL_Event currentEvent;
 	while (SDL_PollEvent(&currentEvent)) {
 		switch (currentEvent.type) {
-			case SDL_QUIT:
-				GetParent()->SetShutdown(true);
-				break;
+		case SDL_QUIT:
+			GetParent()->SetShutdown(true);
+			break;
 		}
 	}
+	SDL_GL_SwapWindow(windowHandle_);
 }
 
 void WindowSystem::Shutdown() {
-	SDL_GL_DeleteContext(windowContext_);
-	windowContext_ = nullptr;
+	if (windowContext_)
+	{
+		SDL_GL_DeleteContext(windowContext_);
+		windowContext_ = nullptr;
+	}
 
-	SDL_DestroyWindow(windowHandle_);
-	windowHandle_ = nullptr;
+	if (windowHandle_)
+	{
+		SDL_DestroyWindow(windowHandle_);
+		windowHandle_ = nullptr;
+	}
 }
 
 WindowSystem::~WindowSystem() {
