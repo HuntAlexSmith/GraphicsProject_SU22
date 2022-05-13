@@ -20,6 +20,7 @@ public:
 	void SetShutdown(bool shutdown);
 	bool IsFinished();
 
+	System* GetSystem(System::SysType type);
 
 	~DuckRendering();
 

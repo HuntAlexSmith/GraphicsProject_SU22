@@ -19,6 +19,8 @@ public:
 	void Update(float dt) override;
 	void Shutdown() override;
 
+	void SetBackgroundColor(glm::vec4 newBackColor);
+
 	~GraphicsSystem();
 
 private:

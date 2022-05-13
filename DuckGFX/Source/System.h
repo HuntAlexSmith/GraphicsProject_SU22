@@ -14,6 +14,8 @@ public:
 
 	enum SysType {
 		WindowSys,
+		SceneSys,
+		InputSys,
 		CameraSys,
 		GraphicsSys,
 		RenderingSys,

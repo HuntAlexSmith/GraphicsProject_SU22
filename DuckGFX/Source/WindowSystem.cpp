@@ -36,15 +36,7 @@ void WindowSystem::Initialize() {
 }
 
 void WindowSystem::Update(float dt) {
-	// For now, just watch for if the window is about to close
-	SDL_Event currentEvent;
-	while (SDL_PollEvent(&currentEvent)) {
-		switch (currentEvent.type) {
-		case SDL_QUIT:
-			GetParent()->SetShutdown(true);
-			break;
-		}
-	}
+	// Swap the window buffers
 	SDL_GL_SwapWindow(windowHandle_);
 }
 

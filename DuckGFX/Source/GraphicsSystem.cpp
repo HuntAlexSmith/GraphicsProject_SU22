@@ -28,6 +28,7 @@ void GraphicsSystem::Initialize() {
 
 void GraphicsSystem::Update(float dt) {
 	// Some quick funky background stuff to make sure everything is working
+	/*
 	if (redIncreasing)
 	{
 		backColor.r += 0.2f * dt;
@@ -66,7 +67,9 @@ void GraphicsSystem::Update(float dt) {
 		if (backColor.b <= 0.0f)
 			blueIncreasing = true;
 	}
+	*/
 
+	// Clear the background color here for now, the renderer should probably handle this though
 	glClearColor(backColor.r, backColor.g, backColor.b, backColor.a);
 	glClearDepth(1);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -78,4 +81,9 @@ void GraphicsSystem::Shutdown() {
 
 GraphicsSystem::~GraphicsSystem() {
 
+}
+
+void GraphicsSystem::SetBackgroundColor(glm::vec4 newBackColor)
+{
+	backColor = newBackColor;
 }

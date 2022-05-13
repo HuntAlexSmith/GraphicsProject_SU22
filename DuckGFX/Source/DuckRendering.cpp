@@ -7,6 +7,8 @@
 //*****************************************************************************
 
 #include "WindowSystem.h"
+#include "SceneSystem.h"
+#include "InputSystem.h"
 #include "GraphicsSystem.h"
 #include "DuckRendering.h"
 
@@ -15,8 +17,12 @@
 DuckRendering::DuckRendering() : systemList_{ nullptr }, shouldShutdown_(false) {
 	// Create a window system and add it to the render engine
 	System* windowSys = new WindowSystem();
+	System* sceneSys = new SceneSystem();
+	System* inputSys = new InputSystem();
 	System* graphicSys = new GraphicsSystem();
 	AddSystem(windowSys);
+	AddSystem(sceneSys);
+	AddSystem(inputSys);
 	AddSystem(graphicSys);
 }
 
@@ -80,4 +86,10 @@ void DuckRendering::AddSystem(System* newSys)
 		systemList_[newSys->GetType()] = newSys;
 		newSys->SetParent(this);
 	}
+}
+
+// Get a system from the engine
+System* DuckRendering::GetSystem(System::SysType type)
+{
+	return systemList_[type];
 }
