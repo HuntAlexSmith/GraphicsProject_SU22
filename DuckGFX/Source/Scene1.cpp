@@ -7,6 +7,7 @@
 
 #include "Scene2.h"
 #include "DuckEngine.h"
+#include <iostream>
 
 static glm::vec4 red(1, 0, 0, 1);
 
@@ -24,6 +25,8 @@ void Scene1Update(float dt)
 {
 	if (DuckInputIsTriggered(SDLK_2))
 		DuckSetNextScene(SceneID::sScene2);
+	else if (DuckInputIsTriggered(SDLK_1))
+		DuckSetNextScene(SceneID::sRestart);
 }
 
 void Scene1Shutdown()

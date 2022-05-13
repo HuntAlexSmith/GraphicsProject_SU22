@@ -10,6 +10,10 @@
 #include "System.h"
 #include "glm/glm.hpp"
 
+//*****************************************************************************
+// Brief: This class is the Graphics System class, which mainly handles any
+//	OpenGL API stuff like loading GLAD and handling Shader Programs
+//*****************************************************************************
 class GraphicsSystem : public System {
 public:
 

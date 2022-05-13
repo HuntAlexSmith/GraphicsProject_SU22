@@ -145,9 +145,11 @@
     <ClCompile Include="Source\GraphicsSystem.cpp" />
     <ClCompile Include="Source\InputSystem.cpp" />
     <ClCompile Include="Source\Main.cpp" />
+    <ClCompile Include="Source\Mesh.cpp" />
     <ClCompile Include="Source\Scene1.cpp" />
     <ClCompile Include="Source\Scene2.cpp" />
     <ClCompile Include="Source\SceneSystem.cpp" />
+    <ClCompile Include="Source\ShaderProgram.cpp" />
     <ClCompile Include="Source\Stub.cpp" />
     <ClCompile Include="Source\System.cpp" />
     <ClCompile Include="Source\WindowSystem.cpp" />
@@ -157,10 +159,12 @@
     <ClInclude Include="Source\DuckRendering.h" />
     <ClInclude Include="Source\GraphicsSystem.h" />
     <ClInclude Include="Source\InputSystem.h" />
+    <ClInclude Include="Source\Mesh.h" />
     <ClInclude Include="Source\Scene1.h" />
     <ClInclude Include="Source\Scene2.h" />
     <ClInclude Include="Source\SceneSystem.h" />
     <ClInclude Include="Source\SceneTable.h" />
+    <ClInclude Include="Source\ShaderProgram.h" />
     <ClInclude Include="Source\Stub.h" />
     <ClInclude Include="Source\System.h" />
     <ClInclude Include="Source\WindowSystem.h" />

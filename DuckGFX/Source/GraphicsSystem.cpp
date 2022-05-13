@@ -11,6 +11,10 @@
 #include "glad/glad.h"
 #include "SDL_H/SDL.h"
 
+//*****************************************************************************
+// Brief: Constructor for the Graphics System, which handles initializing
+//	values and setting the base System type
+//*****************************************************************************
 GraphicsSystem::GraphicsSystem() : System(SysType::GraphicsSys), backColor(0, 0, 0, 1),
 	redIncreasing(true),
 	greenIncreasing(true),
@@ -18,6 +22,10 @@ GraphicsSystem::GraphicsSystem() : System(SysType::GraphicsSys), backColor(0, 0,
 {
 }
 
+//*****************************************************************************
+// Brief: Function for Initializing the Graphics System, which is mainly to
+//	handle loading glad as well as setting OpenGL options
+//*****************************************************************************
 void GraphicsSystem::Initialize() {
 	if (!gladLoadGLLoader(reinterpret_cast<GLADloadproc>(SDL_GL_GetProcAddress)))
 	{
@@ -26,63 +34,35 @@ void GraphicsSystem::Initialize() {
 	}
 }
 
+//*****************************************************************************
+// Brief: Function for Updating the Graphics System. Not much needs to be
+//	updated here.
+//*****************************************************************************
 void GraphicsSystem::Update(float dt) {
-	// Some quick funky background stuff to make sure everything is working
-	/*
-	if (redIncreasing)
-	{
-		backColor.r += 0.2f * dt;
-		if (backColor.r >= 1.0f)
-			redIncreasing = false;
-	}
-	else
-	{
-		backColor.r -= 0.2f * dt;
-		if (backColor.r <= 0.0f)
-			redIncreasing = true;
-	}
-
-	if (greenIncreasing)
-	{
-		backColor.g += 0.15f * dt;
-		if (backColor.g >= 1.0f)
-			greenIncreasing = false;
-	}
-	else
-	{
-		backColor.g -= 0.15f * dt;
-		if (backColor.g <= 0.0f)
-			greenIncreasing = true;
-	}
-
-	if (blueIncreasing)
-	{
-		backColor.b += 0.1f * dt;
-		if (backColor.b >= 1.0f)
-			blueIncreasing = false;
-	}
-	else
-	{
-		backColor.b -= 0.1f * dt;
-		if (backColor.b <= 0.0f)
-			blueIncreasing = true;
-	}
-	*/
-
 	// Clear the background color here for now, the renderer should probably handle this though
 	glClearColor(backColor.r, backColor.g, backColor.b, backColor.a);
 	glClearDepth(1);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
+//*****************************************************************************
+// Brief: Function for Shuting the Graphics System down. Nothing needs to be
+//	done here
+//*****************************************************************************
 void GraphicsSystem::Shutdown() {
 
 }
 
+//*****************************************************************************
+// Brief: Destructor for the graphics system
+//*****************************************************************************
 GraphicsSystem::~GraphicsSystem() {
 
 }
 
+//*****************************************************************************
+// Brief: Function for setting the background color for OpenGL Clear
+//*****************************************************************************
 void GraphicsSystem::SetBackgroundColor(glm::vec4 newBackColor)
 {
 	backColor = newBackColor;
