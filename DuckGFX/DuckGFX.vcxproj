@@ -139,8 +139,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\DuckRendering.cpp" />
     <ClCompile Include="Source\glad.c" />
     <ClCompile Include="Source\Main.cpp" />
+    <ClCompile Include="Source\Stub.cpp" />
+    <ClCompile Include="Source\System.cpp" />
+    <ClCompile Include="Source\WindowSystem.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\DuckRendering.h" />
+    <ClInclude Include="Source\Stub.h" />
+    <ClInclude Include="Source\System.h" />
+    <ClInclude Include="Source\WindowSystem.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
