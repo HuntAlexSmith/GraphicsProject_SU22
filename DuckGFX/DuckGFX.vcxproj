@@ -149,7 +149,6 @@
     <ClCompile Include="Source\Scene1.cpp" />
     <ClCompile Include="Source\Scene2.cpp" />
     <ClCompile Include="Source\SceneSystem.cpp" />
-    <ClCompile Include="Source\ShaderProgram.cpp" />
     <ClCompile Include="Source\Stub.cpp" />
     <ClCompile Include="Source\System.cpp" />
     <ClCompile Include="Source\WindowSystem.cpp" />
@@ -164,7 +163,6 @@
     <ClInclude Include="Source\Scene2.h" />
     <ClInclude Include="Source\SceneSystem.h" />
     <ClInclude Include="Source\SceneTable.h" />
-    <ClInclude Include="Source\ShaderProgram.h" />
     <ClInclude Include="Source\Stub.h" />
     <ClInclude Include="Source\System.h" />
     <ClInclude Include="Source\WindowSystem.h" />
